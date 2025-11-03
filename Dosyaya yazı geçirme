@@ -1,0 +1,24 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <cstring>
+using namespace std;
+
+int main()
+{
+    ofstream dosya("RÜŞTÜ.txt"); // Dosya adı RÜŞTÜ.txt
+    string konsoldanOkunan;
+
+    cout << "Yazmak istediklerini gir (çıkmak için 'cık' yaz):" << endl;
+
+    while (konsoldanOkunan != "cık") {
+        getline(cin, konsoldanOkunan);
+        if (konsoldanOkunan == "cık") break; // 'cık' yazınca döngüden çık
+        dosya << konsoldanOkunan << endl;
+    }
+
+    dosya.close();
+    cout << "Yazdıkların RÜŞTÜ.txt dosyasına kaydedildi." << endl;
+
+    return 0;
+}
